@@ -11,7 +11,7 @@
         <table class="table" id="materias-table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    
                     <th scope="col">Matéria</th>
                     <th scope="col">Data Simulado</th>
                     <th scope="col">Nota Simulado</th>
@@ -23,16 +23,20 @@
             <tbody>
                 <?php foreach($materias as $materia): ?>
                     <tr>
-                        <td scope="row" class="col-id" ><?= $materia['id'] ?></td>
-                        <td scope="row"><?= $materia['nome_materia'] ?></td>
-                        <td scope="row"><?= $materia['data_simulado'] ?></td>
-                        <td scope="row"><?= $materia['nota_simulado'] ?></td>
-                        <td scope="row"><?= $materia['data_prova'] ?></td>
-                        <td scope="row"><?= $materia['nota_prova'] ?></td>
+                       
+                        <td scope="row"><?= $materia["nome_materia"] ?></td>
+                        <td scope="row"><?= $materia["data_simulado"] ?></td>
+                        <td scope="row"><?= $materia["nota_simulado"] ?></td>
+                        <td scope="row"><?= $materia["data_prova"] ?></td>
+                        <td scope="row"><?= $materia["nota_prova"] ?></td>
                         <td class="actions">
-                            <a href="#"><i class="fas fa-eye check-icon"></i></a>
-                            <a href="#"><i class="far fa-edit edit-icon"></i></a>
-                            <button type="submit" class="delete-btn" ><i class="fas fa-times delete-icon"></i></button>
+                            <a href="<?= $BASE_URL ?>show.php?id=<?= $materia["id"] ?>"><i class="fas fa-eye check-icon"></i></a>
+                            <a href="<?= $BASE_URL ?>edit.php?id=<?= $materia["id"] ?>"><i class="far fa-edit edit-icon"></i></a>
+                            <form class="delete-form" action="<?= $BASE_URL ?>/config/process.php" method="POST">
+                                <input type="hidden" name="type" value="delete">
+                                <input type="hidden" name="id" value="<?= $materia["id"] ?>">
+                                <button type="submit" class="delete-btn" ><i class="fas fa-times delete-icon"></i></button>
+                            </form>
                         </td>
                     </tr>
                 <?php endforeach; ?>

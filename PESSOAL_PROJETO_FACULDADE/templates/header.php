@@ -21,7 +21,7 @@
     <!-- FONT-AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS -->
-    <link rel="stylesheet" href="<?= $BASE_URL ?>/css/styles.css">
+    <link rel="stylesheet" href="<?= $BASE_URL ?>css/styles.css">
 </head>
 <body>
     <header>
@@ -32,7 +32,7 @@
             <div>
                 <div class="navbar-nav">
                     <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>index.php">Relação de Matérias</a>
-                    <a class="nav-link active" id="home-link" href="<?= $BASE_URL ?>create.php">Adicionar matéria</a>
+                    <a class="nav-link active" href="<?= $BASE_URL ?>create.php">Adicionar matéria</a>
                 </div>
             </div>
         </nav>
